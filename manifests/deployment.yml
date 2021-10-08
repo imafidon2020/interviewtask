@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: interviewtask 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: interviewtask
+  template:
+    metadata:
+      labels:
+        app: interviewtask 
+    spec:
+      containers:
+        - name: interviewtask 
+          image: interviewtask.azurecr.io/interviewtask
+          ports:
+          - containerPort: 8080
